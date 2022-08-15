@@ -1,0 +1,79 @@
+.pokemon-header {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/3;
+
+  .pokemon-header_image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+    width: 190px;
+    aspect-ratio: 1/1;
+
+    img {
+      width: 85%;
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+.ability-details {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.error-icon {
+  font-size: clamp(100px, 10vw, 250px);
+}
+
+.pokemon-form {
+  transition: transform 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .pokemon-header {
+    aspect-ratio: 16/9;
+
+    .pokemon-header_image {
+      width: 50%;
+      min-width: 150px;
+      max-width: 170px;
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 576px) {
+  .pokemon-header {
+    aspect-ratio: 16/9;
+
+    .pokemon-header_image {
+      width: 50%;
+      max-width: 190px;
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .pokemon-header {
+    aspect-ratio: 16/7;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .pokemon-header {
+    aspect-ratio: 16/6;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .pokemon-header {
+    aspect-ratio: 16/4;
+  }
+}

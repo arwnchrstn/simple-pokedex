@@ -1,0 +1,96 @@
+.pokemon-card,
+.pokemon-card-loader {
+  width: 200px;
+  aspect-ratio: 9/12;
+
+  .pokemon-image {
+    width: 80%;
+
+    .pokemon-sprite {
+      width: 120px;
+    }
+  }
+
+  // Loader
+  .poke-id-loader {
+    height: 15px;
+    width: 40px;
+    background-color: lightgray;
+    animation: changeColor 1.5s infinite linear;
+  }
+
+  .poke-image-loader {
+    width: 110px;
+    aspect-ratio: 1/1;
+    background-color: lightgray;
+    animation: changeColor 1.5s infinite linear;
+  }
+
+  .poke-name-loader {
+    height: 20px;
+    width: 100%;
+    background-color: lightgray;
+    animation: changeColor 1.5s infinite linear;
+  }
+
+  .poke-type-loader-1,
+  .poke-type-loader-2 {
+    height: 15px;
+    background-color: lightgray;
+    animation: changeColor 1.5s infinite linear;
+
+    &.poke-type-1 {
+      width: 50px;
+    }
+    &.poke-type-2 {
+      width: 70px;
+    }
+  }
+}
+
+.searchSuggestions {
+  height: max-content;
+  max-height: 250px;
+  overflow-y: auto;
+  top: 41px;
+  left: 0;
+  background-color: rgb(238, 237, 237);
+
+  ul li {
+    list-style: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(219, 219, 219);
+    }
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: lightgray;
+  }
+  50% {
+    background-color: rgb(231, 231, 231);
+  }
+  100% {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .pokemon-card,
+  .pokemon-card-loader {
+    width: 175px;
+
+    .pokemon-image {
+      .pokemon-sprite {
+        width: 100px;
+      }
+    }
+
+    .poke-image-loader {
+      width: 90px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+* {
+  font-family: "Silkscreen", sans-serif;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+}
+
+.form-control,
+.btn {
+  &:focus {
+    box-shadow: none !important;
+    border-color: none !important;
+    outline: 0 !important;
+  }
+}
