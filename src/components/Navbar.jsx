@@ -10,7 +10,6 @@ const Navbar = () => {
   const [showAbout, setShowAbout] = useState(() =>
     pokemonState.modalShowAboutStatus ? false : true
   );
-  const [promptInstall, setPromptInstall] = useState(null);
 
   const handleHideAbout = () => {
     setShowAbout(false);
@@ -20,17 +19,17 @@ const Navbar = () => {
   //Trigger install prompt
   const handleInstall = (evt) => {
     evt.preventDefault();
-    if (!promptInstall) {
+    if (!pokemonState.promptInstall) {
       return;
     }
-    promptInstall.prompt();
+    pokemonState.promptInstall.prompt();
   };
 
   useEffect(() => {
     const handler = async (e) => {
       e.preventDefault();
       pokemonDispatch({ type: "SET_PWA_COMPATIBILITY", payload: true });
-      setPromptInstall(e);
+      pokemonDispatch({ type: "SET_PROMPT_INSTALL", payload: e });
     };
     window.addEventListener("beforeinstallprompt", handler);
 

@@ -15,7 +15,8 @@ export const PokemonProvider = ({ children }) => {
     prevApi: null,
     nextApi: null,
     modalAboutShowStatus: false,
-    isPwaCompatible: false
+    isPwaCompatible: false,
+    promptInstall: null
   });
 
   useEffect(() => {

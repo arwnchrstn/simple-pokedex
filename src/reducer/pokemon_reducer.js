@@ -16,6 +16,8 @@ export const pokemon_reducer = (state, action) => {
       return { ...state, modalShowAboutStatus: action.payload };
     case "SET_PWA_COMPATIBILITY":
       return { ...state, isPwaCompatible: action.payload };
+    case "SET_PROMPT_INSTALL":
+      return { ...state, promptInstall: action.payload };
     default:
       return state;
   }
