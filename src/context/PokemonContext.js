@@ -14,7 +14,8 @@ export const PokemonProvider = ({ children }) => {
     currentApi: api.POKEMON_SPECIES,
     prevApi: null,
     nextApi: null,
-    modalAboutShowStatus: false
+    modalAboutShowStatus: false,
+    isPwaCompatible: false
   });
 
   useEffect(() => {

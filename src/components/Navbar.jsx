@@ -10,7 +10,6 @@ const Navbar = () => {
   const [showAbout, setShowAbout] = useState(() =>
     pokemonState.modalShowAboutStatus ? false : true
   );
-  const [supportsPWA, setSupportsPWA] = useState(false);
   const [promptInstall, setPromptInstall] = useState(null);
 
   const handleHideAbout = () => {
@@ -30,7 +29,7 @@ const Navbar = () => {
   useEffect(() => {
     const handler = async (e) => {
       e.preventDefault();
-      setSupportsPWA(true);
+      pokemonDispatch({ type: "SET_PWA_COMPATIBILITY", payload: true });
       setPromptInstall(e);
     };
     window.addEventListener("beforeinstallprompt", handler);
@@ -67,7 +66,7 @@ const Navbar = () => {
           <p className="fw-bold m-0">About React JS Pokedex</p>
         </Modal.Header>
         <Modal.Body>
-          {supportsPWA && (
+          {pokemonState.isPwaCompatible && (
             <button
               className="btn btn-danger mx-auto d-block fw-bold"
               onClick={handleInstall}

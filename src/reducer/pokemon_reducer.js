@@ -14,6 +14,8 @@ export const pokemon_reducer = (state, action) => {
       return { ...state, prevApi: action.payload };
     case "SET_MODAL_STATUS":
       return { ...state, modalShowAboutStatus: action.payload };
+    case "SET_PWA_COMPATIBILITY":
+      return { ...state, isPwaCompatible: action.payload };
     default:
       return state;
   }
